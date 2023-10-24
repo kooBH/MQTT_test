@@ -41,7 +41,7 @@ services:
 ```
 Then launch the server as follows:
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 # Run MQTT subscription example

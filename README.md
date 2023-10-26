@@ -45,6 +45,12 @@ Then launch the server as follows:
 docker compose up -d
 ```
 
+And in the docker, command  
+```
+rabbitmq-plugins enable rabbitmq_mqtt
+```  
+to enable TCP connection. 
+
 # Run MQTT subscription example
 
 Depends on `paho-mqtt` library and the shared `messages` library in python. 

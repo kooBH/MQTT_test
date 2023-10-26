@@ -7,6 +7,7 @@ sudo apt-get install libsndfile1-dev libjsoncpp-dev libssl-dev
 ```
 
 # Installing paho mqtt for C++
++ [Ubuntu 22.04 or Highrer](https://packages.ubuntu.com/search?keywords=libpaho-mqtt-dev)
 ```
 git clone https://github.com/eclipse/paho.mqtt.cpp
 sudo apt-get install g++ cmake libpaho-mqtt-dev

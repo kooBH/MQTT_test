@@ -4,7 +4,7 @@ import wave
 import time
 
 import paho.mqtt.client as mqtt
-from messages.IncrementalUnits.Audio.AudioInputIU import AudioInputIU
+#from messages.IncrementalUnits.Audio.AudioInputIU import AudioInputIU
 
 logging.basicConfig(level = logging.NOTSET)
 logger = logging.getLogger(__name__)
@@ -63,7 +63,9 @@ class Recorder:
             self.handle_audio(msg.payload)
 
     def handle_audio(self, msg):
-        msg = AudioInputIU.from_json(msg)
+        #msg = AudioInputIU.from_json(msg)
+        print(msg)
+        return
 
         if self.is_recording:
             data = msg.all_channels

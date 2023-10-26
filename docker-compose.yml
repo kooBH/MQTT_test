@@ -1,8 +1,12 @@
 version: "3.9"
 services:
-    rabbitmq:
-          image: "rabbitmq:3.11"
-          ports:
-            - 1883:1883
-            - 15672:15672
-            - 15675:15675
+  rabbitmq:
+    image: "rabbitmq:3.11"
+    #image: rabbitmq:3.11.0-management-alpine
+    ports:
+      - "1883:1883"
+      - "15672:15672"
+      - "15675:15675"
+    # TODO : perform manually
+    #command: rabbitmq-plugins enable rabbitmq_mqtt
+

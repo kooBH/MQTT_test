@@ -10,7 +10,7 @@ sudo apt-get install libsndfile1-dev libjsoncpp-dev libssl-dev
 ```
 git clone https://github.com/eclipse/paho.mqtt.cpp
 sudo apt-get install g++ cmake libpaho-mqtt-dev
-cd paho.mqtt
+cd paho.mqtt.cpp
 mkdir build
 cd build
 cmake..

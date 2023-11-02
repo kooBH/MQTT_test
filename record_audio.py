@@ -2,6 +2,7 @@ import argparse
 import logging
 import wave
 import time
+import json
 
 import paho.mqtt.client as mqtt
 #from messages.IncrementalUnits.Audio.AudioInputIU import AudioInputIU
@@ -64,8 +65,19 @@ class Recorder:
 
     def handle_audio(self, msg):
         #msg = AudioInputIU.from_json(msg)
-        print(msg)
-        return
+        base64_string = msg.decode(ENCODING)
+
+        json_data = json.loads(base64_string)
+
+        if self.is_recording:
+            data = json_data["all_channels"]
+            #interlace the channels to write to disk
+            for i,ch in enumerate(range(self.channels)):
+                #data_i = bytes(data[ch],'utf-8')
+                #data_i = bytes(data[ch],'ascii')
+                data_i = data[ch]
+                print(data_i)
+                self.wavfiles[i].write(data_i)
 
         if self.is_recording:
             data = msg.all_channels
